@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nohemi Typeface', sans-serif; 
+}
+
+body {
+  background: linear-gradient(
+      to bottom,
+      #ffffff, /* Warna putih di atas */
+      #eaf7ff, /* Warna biru muda di tengah */
+      #42a4e1 /* Warna biru di bawah */
+  );
+  background-size: 100% 100%; /* Menjaga gradasi sampai bawah */
+  height: 100vh; /* Pastikan body mengisi seluruh layar */
+  color: #0c0c0c;
+  font-family: 'Nohemi Typeface', sans-serif; 
+}
+
+
+
+.bg-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.bg-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7; 
+}
+
+.navbar {
+  padding: 10px 40px; /* Ruang di sekitar navbar */
+  background-color: transparent; /* Latar belakang transparan untuk menyatu dengan halaman */
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: 100px; /* Memindahkan logo sedikit ke kanan */
+}
+
+.logo img {
+  width: 60px; /* Perbesar ukuran logo */
+  height: 60px; /* Sesuaikan tinggi agar proporsional */
+  margin-right: 16px;
+  border-radius: 50%; /* Tetap berbentuk lingkaran */
+  object-fit: cover; /* Memastikan gambar tetap proporsional dalam lingkaran */
+}
+
+
+.navbar-nav {
+  display: flex;
+  gap: 15px; /* Spasi antar menu diperpendek */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  font-family: 'Raleway', sans-serif; /* Font seperti gambar */
+  font-size: 16px; /* Ukuran font */
+  font-weight: 500; /* Berat font medium */
+  color: hsl(0, 0%, 20%); /* Warna teks default */
+  text-decoration: none;
+  transition: color 0.3s ease-in-out; /* Efek transisi */
+  padding: 5px 8px;
+}
+
+.nav-link:hover {
+  color: #42a4e1; /* Warna biru muda saat hover */
+}
+
+/* Warna untuk halaman aktif */
+.nav-link.active {
+  color: #42a4e1; /* Warna biru muda untuk menu aktif */
+  font-weight: 600; /* Berat font lebih tebal */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-nav {
+      flex-direction: column;
+      gap: 10px; /* Spasi lebih kecil di layar kecil */
+      text-align: center;
+  }
+
+  .nav-link {
+      padding: 10px 0;
+  }
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.icon-btn img {
+    width: 20px;
+}
+
+.container {
+  position: relative;
+  max-width: 800px; /* Ukuran default lebih besar */
+  width: 100%;
+  background: #fff;
+  padding: 30px 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  perspective: 2700px;
+  margin: auto; 
+  transform: translateY(50px);
+}
+
+.container .cover {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  height: 100%;
+  width: 50%;
+  z-index: 98;
+  transition: all 1s ease;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.container #flip:checked ~ .cover {
+  transform: rotateY(-180deg);
+}
+
+.container #flip:checked ~ .forms .login-form {
+  pointer-events: none;
+}
+
+.container .cover .front,
+.container .cover .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.cover .back {
+  transform: rotateY(180deg);
+}
+
+.container .cover img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 10;
+}
+
+.container .cover .text {
+  position: absolute;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .cover .text::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  background: #C7EDF1;
+}
+
+.cover .text .text-1,
+.cover .text .text-2 {
+  z-index: 20;
+  font-size: 26px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+
+.cover .text .text-2 {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.container .forms {
+  height: 100%;
+  width: 100%;
+  background: #fff;
+}
+
+.container .form-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-content .login-form,
+.form-content .signup-form {
+  width: calc(100% / 2 - 25px);
+}
+
+.forms .form-content .title {
+  position: relative;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+}
+
+.forms .form-content .title:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 25px;
+  background: #C7EDF1;
+}
+
+.forms .signup-form .title:before {
+  width: 20px;
+}
+
+.forms .form-content .input-boxes {
+  margin-top: 30px;
+}
+
+.forms .form-content .input-box {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  margin: 10px 0;
+  position: relative;
+}
+
+.form-content .input-box input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 0 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.form-content .input-box input:focus,
+.form-content .input-box input:valid {
+  border-color: #C7EDF1;
+}
+
+.form-content .input-box i {
+  position: absolute;
+  color: #C7EDF1;
+  font-size: 17px;
+}
+
+.forms .form-content .text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.forms .form-content .text a {
+  text-decoration: none;
+}
+
+.forms .form-content .text a:hover {
+  text-decoration: underline;
+}
+
+.forms .form-content .button {
+  color: #fff;
+  margin-top: 40px;
+}
+
+.forms .form-content .button input {
+  color: #fff;
+  background: #C7EDF1;
+  border-radius: 6px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.forms .form-content .button input:hover {
+  background: #C7EDF1;
+}
+
+.forms .form-content label {
+  color: #C7EDF1;
+  cursor: pointer;
+}
+
+.forms .form-content label:hover {
+  text-decoration: underline;
+}
+
+.forms .form-content .login-text,
+.forms .form-content .sign-up-text {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.container #flip {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+      max-width: 90%; /* Sesuaikan ukuran container */
+  }
+
+  .form-content {
+      flex-direction: column; /* Susunan vertikal untuk layar kecil */
+  }
+
+  .form-content .login-form,
+  .form-content .signup-form {
+      width: 100%; /* Kedua form menggunakan lebar penuh */
+  }
+
+  .form-content .input-box input {
+      font-size: 14px; /* Ukuran font lebih kecil */
+  }
+
+  .form-content .button input {
+      font-size:14px;
+  }
+}

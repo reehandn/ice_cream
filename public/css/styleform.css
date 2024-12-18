@@ -1,0 +1,321 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif; /* Menggunakan font Raleway */
+}
+
+body {
+    background: linear-gradient(to bottom, #ffffff, #eaf7ff, #42a4e1); /* Warna latar belakang */
+    min-height: 100vh;
+    background-size: cover;
+    color: #0c0c0c;
+}
+
+/* Header */
+.navbar {
+    padding: 10px 40px; 
+    background-color: transparent; 
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+}
+
+.logo img {
+    width: 60px;
+    height: 60px;
+    margin-right: 16px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Navbar links */
+.navbar-nav {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    font-size: 16px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    padding: 5px 8px;
+}
+
+.nav-link:hover {
+    color: #42a4e1;
+}
+
+.nav-link.active {
+    color: #42a4e1;
+    font-weight: 600;
+}
+
+/* Box Container */
+.container {
+    max-width: 900px;
+    margin: 100px auto 50px auto;
+    padding: 0 15px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group-text {
+    background: transparent;
+    border: none;
+    color: #42a4e1;
+    font-size: 20px;
+    padding: 0;
+    margin-right: 10px;
+    pointer-events: none; /* Ikon tidak bisa diklik */
+}
+
+.input-group input, .input-group select {
+    flex: 1; /* Mengatur agar input mengisi ruang yang tersedia */
+    padding: 14px 16px; /* Padding yang seimbang untuk kenyamanan */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #f9f9f9; /* Latar belakang abu-abu muda */
+    font-family: 'Raleway', sans-serif; /* Pastikan input menggunakan font Raleway */
+}
+
+.input-group input:focus, .input-group select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none; /* Menghapus outline default */
+}
+
+.input-group i {
+    position: absolute;
+    top: 40%;
+    left: 13px;
+    transform: translateY(-50%);
+    color: #42a4e1;
+    font-size: 25px;
+    pointer-events: none;
+}
+
+.input-group input:hover {
+    background-color: #ffffff; /* Menambahkan efek hover */
+}
+
+/* Styling untuk Cardbox */
+.box {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    border-left: 6px solid #42a4e1;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+h3 i {
+    margin-right: 10px;
+    color: #42a4e1;
+}
+
+.form-label {
+    font-family: 'Raleway', sans-serif; /* Font untuk label */
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* Styling untuk input dan select */
+.form-control,
+.form-select {
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+    background-color: #f9f9f9;
+    font-family: 'Raleway', sans-serif; /* Font untuk form input dan select */
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Styling tambahan untuk responsif */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .box {
+        padding: 20px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    .form-control,
+    .form-select {
+        padding: 10px;
+    }
+
+    button[type="submit"], #show-summary {
+        width: 100%;
+    }
+
+    #topping-images {
+        flex-direction: column;
+    }
+
+    #topping-images img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Form Check for Topping */
+.form-check {
+    margin-bottom: 15px;
+}
+
+.form-check-input {
+    margin-top: 10px;
+}
+
+.form-check-label {
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+/* Styling untuk Topping */
+#topping-images {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+#topping-images img {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#topping-images img:hover {
+    transform: scale(1.1);
+}
+
+/* Ringkasan Pesanan */
+#order-summary {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+#order-summary h3 {
+    font-size: 1.5em;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+#order-summary p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Cardbox */
+.cardbox {
+    max-width: 300px;  /* Sesuaikan ukuran cardbox */
+    margin: 0 auto;    /* Membuat cardbox terpusat */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+/* Tombol Kirim Pesanan */
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;  /* Mengecilkan padding tombol */
+    font-size: 14px;      /* Menyesuaikan ukuran font */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%;          /* Tombol mengisi lebar cardbox */
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Styling untuk map button */
+button#map-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 18px;   /* Mengecilkan padding tombol map */
+    font-size: 14px;      /* Menyesuaikan ukuran font */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;          /* Tombol map juga mengisi lebar cardbox */
+}
+
+button#map-button:hover {
+    background-color: #0056b3;
+}
+
+/* Styling untuk Total Harga */
+#total-harga {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 20px;
+    color: rgb(53, 126, 198); /* Warna teks yang lebih gelap */
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #bdc3c7;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#total-harga .value {
+    font-size: 1.8rem;
+    color: #42a4e1;
+    font-weight: 700;
+}

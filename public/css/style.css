@@ -1,0 +1,706 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nohemi Typeface', sans-serif; 
+}
+
+body {
+    background: linear-gradient(
+        to bottom,
+        #ffffff, /* Warna putih di atas */
+        #eaf7ff, /* Warna biru muda di tengah */
+        #42a4e1 /* Warna biru di bawah */
+    );
+    background-size: cover;
+    color: #0c0c0c;
+    font-family: 'Nohemi Typeface', sans-serif; 
+}
+
+.navbar {
+    padding: 10px 40px; /* Ruang di sekitar navbar */
+    background-color: transparent; /* Latar belakang transparan untuk menyatu dengan halaman */
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 100px; /* Memindahkan logo sedikit ke kanan */
+}
+
+.logo img {
+    width: 60px; /* Perbesar ukuran logo */
+    height: 60px; /* Sesuaikan tinggi agar proporsional */
+    margin-right: 16px;
+    border-radius: 50%; /* Tetap berbentuk lingkaran */
+    object-fit: cover; /* Memastikan gambar tetap proporsional dalam lingkaran */
+}
+
+
+.navbar-nav {
+    display: flex;
+    gap: 15px; /* Spasi antar menu diperpendek */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    font-family: 'Raleway', sans-serif; /* Font seperti gambar */
+    font-size: 16px; /* Ukuran font */
+    font-weight: 500; /* Berat font medium */
+    color: hsl(0, 0%, 20%); /* Warna teks default */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out; /* Efek transisi */
+    padding: 5px 8px;
+}
+
+.logout {
+    font-family: 'Raleway', sans-serif; /* Font seperti gambar */
+    font-size: 16px; /* Ukuran font */
+    font-weight: 500; /* Berat font medium */
+    color: hsl(0, 0%, 20%); /* Warna teks default */
+    background-color: transparent; /* Background transparan */
+    border: none; /* Menghilangkan border default */
+    padding: 5px 8px; /* Padding untuk tombol */
+    cursor: pointer; /* Menunjukkan tombol bisa diklik */
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Efek transisi */
+}
+
+.logout:hover {
+    color: hsl(0, 0%, 40%); /* Warna teks saat hover */
+    background-color: hsl(0, 0%, 95%); /* Warna latar saat hover */
+}
+
+.nav-link:hover {
+    color: #42a4e1; /* Warna biru muda saat hover */
+}
+
+/* Warna untuk halaman aktif */
+.nav-link.active {
+    color: #42a4e1; /* Warna biru muda untuk menu aktif */
+    font-weight: 600; /* Berat font lebih tebal */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        gap: 10px; /* Spasi lebih kecil di layar kecil */
+        text-align: center;
+    }
+
+    .nav-link {
+        padding: 10px 0;
+    }
+}
+
+
+.hero {
+    display: flex;
+    justify-content: flex-start; /* Posisikan elemen teks ke kiri */
+    align-items: flex-start; /* Mengatur elemen agar mulai dari atas */
+    padding: 150px 100px; /* Tambahkan padding atas agar teks lebih turun */
+    position: relative;
+}
+
+.hero-text {
+    max-width: 600px;
+    margin-left: 50px; /* Pindahkan teks lebih ke kanan */
+    margin-top: 20px; /* Turunkan teks sedikit ke bawah */
+}
+
+.hero-text h1 {
+    font-size: 2.8em; /* Ukuran font tetap sesuai */
+    color: #001286; /* Warna teks tetap */
+    margin-bottom: 20px;
+    line-height: 1.3;
+    font-family: 'Raleway', sans-serif; /* Gunakan Raleway seperti desain */
+    font-weight: 600; /* Berat font */
+}
+
+
+.shop-now-btn {
+    background-color: #42a4e1;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.shop-now-btn:hover {
+    background-color: #42a4e1;
+}
+
+.hero-image {
+    max-width: 45%; /* Atur lebar gambar */
+    text-align: center; /* Tengahkan gambar dalam div */
+    margin-left: 60px; /* Tambahkan margin untuk memindahkan gambar ke kanan */
+}
+
+.hero-image img {
+    max-width: 80%; /* Sesuaikan ukuran gambar */
+    height: auto; /* Proporsional */
+    border-radius: 20px; /* Tambahkan sedikit border-radius */
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .hero-image {
+        margin-top: 30px;
+    }
+}
+
+.hero-text h1 {
+    font-size: 2.8em;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    font-size: 1.1em;
+    color: #555; /* Biarkan warna teks tetap seperti semula */
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+.hero-btn {
+    background-color: #42a4e1; 
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background 0.3s;
+}
+
+.hero-btn:hover {
+    background-color: #42a4e1; 
+}
+
+/* Section styling */
+.offers {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Jarak antar kartu */
+    padding-top: 10px; /* Kurangi jarak antara heading dan card */
+    flex-wrap: wrap;
+}
+
+.offer-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 300px; /* Ukuran tetap kartu */
+    text-align: left; /* Teks rata kiri */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.offer-card:hover {
+    transform: translateY(-10px); /* Efek naik saat hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.offer-card img {
+    width: 100%; /* Gambar penuh */
+    height: auto; /* Proporsional */
+    border-bottom: 1px solid #ddd; /* Pembatas bawah gambar */
+}
+
+.offer-text {
+    padding: 20px;
+    font-family: 'Raleway', sans-serif;
+    color: #333;
+}
+
+.offer-text h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #000;
+    line-height: 1.4;
+}
+
+.offer-text p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.offer-text .date {
+    font-size: 0.85em;
+    color: #888;
+    font-style: italic;
+}
+
+/* Responsif */
+@media (max-width: 1024px) {
+    .offers {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .offer-card {
+        width: 90%; /* Lebar penuh di layar kecil */
+    }
+}
+
+.special-offers-heading {
+    text-align: center;
+    padding: 40px 20px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.special-offers-heading h2 {
+    font-size: 2.2em;
+    color: #333;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+}
+
+.main-text {
+    font-size: 2.8em;
+    color: #001286; /* Warna teks utama */
+    font-weight: 300;
+    position: relative; /* Atur posisi relatif untuk memungkinkan pengaturan absolut pada pseudo-element */
+    display: inline-block;
+    margin-bottom: 0px;
+    text-transform: capitalize;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 1px; /* Memberikan sedikit jarak antar huruf */
+}
+
+
+.sub-text {
+    font-size: 1.1em;
+    color: #555; /* Warna teks sub */
+    margin-top: 0px;
+    line-height: 1.6;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .main-text {
+        font-size: 2em; /* Ukuran lebih kecil untuk layar kecil */
+    }
+
+    .sub-text {
+        font-size: 1em;
+    }
+}
+
+/* General Styling */
+.how-it-works {
+    padding: 60px 20px;
+    background-color: transparent;
+    text-align: center;
+    
+}
+
+.how-it-works h2 {
+    font-size: 2.5em;
+    color: #001286;
+    margin-bottom: 40px;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Wrapper for Boxes */
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Info Box Styling */
+.info-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-radius: 15px;
+    padding: 20px;
+    width: 500px;
+    background-color: rgba(255, 255, 255, 0.6); /* Transparan */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Lembut */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover Effect */
+.info-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.info-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* Text Styling */
+.info-text h3 {
+    font-size: 1.8em;
+    color: #42a4e1;
+    margin-bottom: 10px;
+}
+
+.info-text p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Link Styling */
+.info-link {
+    font-size: 1em;
+    color: #42a4e1;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s;
+}
+
+.info-link:hover {
+    color: #145214;
+}
+
+.info-link span {
+    font-size: 1.2em;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.info-link:hover span {
+    transform: translateX(5px);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .info-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .info-image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .info-text h3 {
+        font-size: 1.5em;
+    }
+
+    .info-text p {
+        font-size: 0.9em;
+    }
+}
+
+
+/* General Styling */
+.milestone {
+    padding: 40px 20px;
+    font-family: 'Raleway', sans-serif;
+    background-color: #fefcf8;
+    color: #333;
+}
+
+/* Milestone Title */
+.milestone-title {
+    font-size: 2.5em;
+    color: #001286;
+    margin-bottom: 40px;
+    text-align: left;
+    padding-left: 220px; /* Geser lebih ke kanan */
+}
+
+
+/* Timeline Container */
+.timeline {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 80px; /* Jarak untuk garis timeline */
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 80px; /* Posisikan garis timeline */
+    width: 3px;
+    height: 100%;
+    background-color: #42a4e1;
+}
+
+/* Timeline Item */
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    gap: 20px;
+    position: relative;
+}
+
+.timeline-year {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #42a4e1;
+    position: absolute;
+    left: 20px; /* Geser tahun ke kiri */
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+    width: 50px;
+}
+
+/* Timeline Content */
+.timeline-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: 60px; /* Geser konten ke kanan agar tidak menabrak garis */
+}
+
+.timeline-image img {
+    width: 250px;
+    height: 150px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.timeline-text h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #42a4e1;
+    margin-bottom: 10px;
+}
+
+.timeline-text p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .milestone-title {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .timeline-year {
+        left: 0;
+        top: -30px;
+    }
+
+    .timeline-content {
+        margin-left: 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .timeline-image img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.footer {
+    position: relative;
+    background: linear-gradient(135deg, #f8f9fa, #eaf3f9);
+    color: #333;
+    padding: 40px 20px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.footer-logo-section {
+    text-align: center;
+    flex: 1;
+}
+
+.footer-logo {
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+.footer-logo-section p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.contact-btn {
+    background-color: #f28b20;
+    color: #fff;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #e0761c;
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+    flex: 2;
+}
+
+.footer-column {
+    flex: 1;
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+    border-bottom: 2px solid #f28b20;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #f28b20;
+}
+
+.footer-contact {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-contact p {
+    margin: 8px 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icons a img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #f8f9fa;
+    color: #666;
+    font-size: 14px;
+    margin-top: 30px;
+    border-top: 1px solid #ddd;
+}
+
+.footer-logo {
+    width: 60px; /* Ubah ukuran logo */
+    height: 60px; /* Buat logo berbentuk persegi */
+    border-radius: 50%; /* Membuat logo menjadi bulat */
+    object-fit: cover; /* Memastikan gambar memenuhi lingkaran tanpa distorsi */
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan untuk estetika */
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;  /* Mengecilkan padding tombol */
+    font-size: 14px;      /* Menyesuaikan ukuran font */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%;          /* Tombol mengisi lebar cardbox */
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Styling untuk map button */
+button#map-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 18px;   /* Mengecilkan padding tombol map */
+    font-size: 14px;      /* Menyesuaikan ukuran font */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;          /* Tombol map juga mengisi lebar cardbox */
+}
+
+button#map-button:hover {
+    background-color: #0056b3;
+}

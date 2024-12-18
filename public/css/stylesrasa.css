@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nohemi Typeface', sans-serif; 
+}
+
+body {
+    background: linear-gradient(
+        to bottom,
+        #ffffff, /* Warna putih di atas */
+        #eaf7ff, /* Warna biru muda di tengah */
+        #42a4e1 /* Warna biru di bawah */
+    );
+    background-size: cover;
+    color: #0c0c0c;
+    font-family: 'Nohemi Typeface', sans-serif; 
+}
+/* Header */
+.navbar {
+    padding: 10px 40px; /* Ruang di sekitar navbar */
+    background-color: transparent; /* Latar belakang transparan untuk menyatu dengan halaman */
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 100px; /* Memindahkan logo sedikit ke kanan */
+}
+
+.logo img {
+    width: 60px; /* Perbesar ukuran logo */
+    height: 60px; /* Sesuaikan tinggi agar proporsional */
+    margin-right: 16px;
+    border-radius: 50%; /* Tetap berbentuk lingkaran */
+    object-fit: cover; /* Memastikan gambar tetap proporsional dalam lingkaran */
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 15px; /* Spasi antar menu diperpendek */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    font-family: 'Raleway', sans-serif; /* Font seperti gambar */
+    font-size: 16px; /* Ukuran font */
+    font-weight: 500; /* Berat font medium */
+    color: hsl(0, 0%, 20%); /* Warna teks default */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out; /* Efek transisi */
+    padding: 5px 8px;
+}
+
+.nav-link:hover {
+    color: #42a4e1; /* Warna biru muda saat hover */
+}
+
+/* Warna untuk halaman aktif */
+.nav-link.active {
+    color: #42a4e1; /* Warna biru muda untuk menu aktif */
+    font-weight: 600; /* Berat font lebih tebal */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        gap: 10px; /* Spasi lebih kecil di layar kecil */
+        text-align: center;
+    }
+
+    .nav-link {
+        padding: 10px 0;
+    }
+}
+
+/* Menu Section */
+.menu-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+/* Font untuk H1 dan paragraf */
+.menu-heading {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2.5rem; /* Ukuran besar untuk H1 */
+    color: #42a4e1; /* Warna biru */
+    font-weight: 700; /* Font tebal untuk H1 */
+}
+
+.menu-subheading {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1rem; /* Ukuran sedang untuk subheading */
+    color: #666; /* Warna abu-abu */
+    font-weight: 400; /* Font normal untuk subheading */
+}
+
+
+/* Menu Container */
+/* Menu Section */
+.menu-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.menu-title,
+.menu-description,
+.menu-price {
+    color: #42a4e1;
+}
+
+.menu-card {
+    background-color: #ffffff;
+    color: #42a4e1;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.menu-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.menu-info {
+    padding: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .menu-card {
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-section h1 {
+        font-size: 2rem;
+    }
+
+    .menu-section p {
+        font-size: 1rem;
+    }
+
+    .menu-card {
+        margin: 20px auto;
+    }
+
+    .menu-image {
+        height: 180px;
+    }
+
+    .menu-info {
+        padding: 10px;
+    }
+
+    .menu-title {
+        font-size: 1.2rem;
+    }
+
+    .menu-price {
+        font-size: 1rem;
+    }
+
+    .btn-danger {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .menu-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .menu-section p {
+        font-size: 0.9rem;
+    }
+
+    .menu-image {
+        height: 150px;
+    }
+
+    .btn-danger {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+}
